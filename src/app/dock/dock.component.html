@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="background">
+		@for (project of projects; track $index) {
+			<img [src]="project.logoSmall" alt="project.name" class="appImg" />
+		}
+	</div>
+</div>
+
+<style lang="scss">
+	.container {
+		width: 100%;
+		padding-top: 40px;
+		padding-bottom: 0px;
+		transition: 0.5s ease-in-out;
+		&:hover {
+			padding-top: 0px;
+			padding-bottom: 110px;
+		}
+	}
+	.background {
+		background-color: #ffffff4f;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.486);
+		border-radius: 20px;
+		box-shadow: 0 0 10px 0px #000;
+		height: 80px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+		.appImg {
+			height: 75px;
+			margin: 6px;
+			cursor: pointer;
+			transition: 0.2s;
+			-webkit-filter: drop-shadow(5px 5px 5px #22222293);
+			filter: drop-shadow(5px 5px 5px #22222293);
+			&:hover {
+				scale: 1.7;
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-bottom: 50px;
+			}
+		}
+		/*make padding-left for first element 0px*/
+		.appImg:first-child {
+			padding-left: 20px;
+		}
+		.appImg:last-child {
+			padding-right: 20px;
+		}
+	}
+</style>

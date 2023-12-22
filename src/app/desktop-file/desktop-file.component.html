@@ -1,0 +1,25 @@
+<div class="container" [style.top.px]="top" [style.left.px]="left" cdkDrag>
+	<img src="assets/file.png" alt="" />
+	<p>
+		{{ name }}
+	</p>
+</div>
+<style lang="scss">
+	.container {
+		position: absolute;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		cursor: pointer;
+		img {
+			width: 70px;
+		}
+		p {
+			font-size: 14px;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			text-shadow: 5px 5px 5px black;
+		}
+	}
+</style>
