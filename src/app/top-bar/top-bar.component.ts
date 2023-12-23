@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppearanceService } from '../services/appearance.service';
+import { WindowManagerComponent } from '../window-manager/window-manager.component';
 
 @Component({
 	selector: 'app-top-bar',
@@ -37,5 +38,8 @@ export class TopBarComponent {
 		} else {
 			AppearanceService.darkmode();
 		}
+	}
+	openSettings() {
+		WindowManagerComponent.openSettingsWindow();
 	}
 }

@@ -1,10 +1,18 @@
 @for (window of getWindows(); track $index) {
-	@if (window.type === 'text') {
-		<app-text-window
-			[id]="window.id"
-			[name]="window.file.name"
-			[text]="window.file.content"
-			[level]="window.level"
-		></app-text-window>
+	@switch (window.type) {
+		@case ('text') {
+			<app-text-window
+				[id]="window.id"
+				[name]="window.file.name"
+				[text]="window.file.content"
+				[level]="window.level"
+			></app-text-window>
+		}
+		@case ('settings') {
+			<app-settings-window
+				[id]="window.id"
+				[level]="window.level"
+			></app-settings-window>
+		}
 	}
 }

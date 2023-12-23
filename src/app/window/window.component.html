@@ -1,5 +1,5 @@
 <div
-	[class]="maximize ? 'container ' : 'container'"
+	[class]="dragging ? 'container' : 'container transition'"
 	#mywindow
 	(click)="focus()"
 	[style.z-index]="999 - level"
@@ -24,12 +24,14 @@
 </div>
 
 <style lang="scss">
+	.transition {
+		transition: all 0.3s ease-in-out;
+	}
 	.container {
 		position: fixed;
 		width: 700px;
 		height: 500px;
 		border-radius: 3px;
-		transition: scale 0.2s ease-in-out;
 		.topbar {
 			width: 100%;
 			height: 25px;

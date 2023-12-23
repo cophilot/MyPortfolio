@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BackgroundComponent } from '../background/background.component';
 
 @Component({
 	selector: 'app-mobile-app',
 	standalone: true,
-	imports: [],
+	imports: [BackgroundComponent],
 	templateUrl: './mobile-app.component.html',
 	styleUrl: './mobile-app.component.scss',
 })

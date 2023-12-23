@@ -1,0 +1,46 @@
+<app-window [id]="id" [level]="level" [overflow]="true">
+	<div class="settings">
+		<h1>Settings</h1>
+		<h2>Appearance</h2>
+		<div class="row">
+			<p>Theme</p>
+			<button class="btn" (click)="toggleDarkMode()">
+				{{ isDarkMode() ? 'Dark' : 'Light' }}
+			</button>
+		</div>
+	</div>
+</app-window>
+
+<style lang="scss">
+	.settings {
+		font-size: 20px;
+		max-width: 700px;
+		.row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+		.row:first-child {
+			margin-left: 15px;
+		}
+		.row:last-child {
+			margin-right: 15px;
+		}
+		.btn {
+			font-size: 20px;
+			background-color: var(--text-color);
+			color: var(--bg-color);
+			border: none;
+			border-radius: 5px;
+			padding: 5px 10px;
+			cursor: pointer;
+			transition: 0.2s;
+			&:hover {
+				scale: 1.1;
+				box-shadow: 0 0 10px 0px #000;
+			}
+		}
+	}
+</style>

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import File from '../../types/File';
 import { WindowComponent } from '../window/window.component';
 import { TextWindowComponent } from '../text-window/text-window.component';
+import { SettingsWindowComponent } from '../services/settings-window/settings-window.component';
 
 @Component({
 	selector: 'app-window-manager',
 	standalone: true,
-	imports: [WindowComponent, TextWindowComponent],
+	imports: [WindowComponent, TextWindowComponent, SettingsWindowComponent],
 	templateUrl: './window-manager.component.html',
 	styleUrl: './window-manager.component.scss',
 })
@@ -15,6 +16,23 @@ export class WindowManagerComponent {
 
 	static windowIDCounter = 0;
 
+	static openSettingsWindow() {
+		const settingsWindow = this.windows.find(
+			(window) => window.type == 'settings'
+		);
+		if (settingsWindow) {
+			this.focusWindow(settingsWindow.id);
+			return;
+		}
+
+		this.decreaseLevel();
+		WindowManagerComponent.windows.push({
+			id: WindowManagerComponent.windowIDCounter,
+			type: 'settings',
+			level: 0,
+		});
+		WindowManagerComponent.windowIDCounter++;
+	}
 	static openTextWindow(file: File) {
 		this.decreaseLevel();
 		WindowManagerComponent.windows.push({

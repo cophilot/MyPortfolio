@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BackgroundComponent } from '../background/background.component';
 
 @Injectable({
 	providedIn: 'root',
@@ -30,10 +31,12 @@ export class AppearanceService {
 	static darkmode() {
 		document.documentElement.setAttribute('data-theme', 'dark');
 		this.isDarkMode = true;
+		BackgroundComponent.recolor();
 	}
 
 	static lightmode() {
 		this.isDarkMode = false;
 		document.documentElement.setAttribute('data-theme', 'light');
+		BackgroundComponent.recolor();
 	}
 }
