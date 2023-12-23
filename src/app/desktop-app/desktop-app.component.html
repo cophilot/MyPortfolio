@@ -1,0 +1,23 @@
+<!-- <img src="assets/background.jpg" alt="" class="background" />
+ -->
+<app-background></app-background>
+<app-dock class="dock"></app-dock>
+
+<app-desktop-file></app-desktop-file>
+<style lang="scss">
+	.background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	.dock {
+		position: fixed;
+		bottom: -100px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1000;
+	}
+</style>
