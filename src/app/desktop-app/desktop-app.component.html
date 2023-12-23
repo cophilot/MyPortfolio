@@ -3,9 +3,11 @@
 <app-background></app-background>
 <app-dock class="dock"></app-dock>
 <app-top-bar></app-top-bar>
+<app-window-manager></app-window-manager>
 
-<app-desktop-file name="test"></app-desktop-file>
-<app-desktop-file name="help"></app-desktop-file>
+@for (file of desktopFiles; track $index) {
+	<app-desktop-file [file]="file"></app-desktop-file>
+}
 
 <style lang="scss">
 	.background {

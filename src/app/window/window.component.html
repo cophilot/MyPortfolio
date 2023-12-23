@@ -1,0 +1,85 @@
+<div
+	[class]="maximize ? 'container ' : 'container'"
+	#mywindow
+	(click)="focus()"
+	[style.z-index]="999 - level"
+	[style.top.px]="top"
+	[style.left.px]="left"
+>
+	<div
+		class="topbar"
+		(dblclick)="toggleMaximize()"
+		(mousedown)="startDragging($event)"
+		(mouseup)="stopDragging()"
+	>
+		<div class="dot red" (click)="close()"></div>
+		<div class="dot yellow" (click)="toggleMinimized()"></div>
+		<div class="dot green" (click)="toggleMaximize()"></div>
+	</div>
+	<div class="contentbackground">
+		<div class="content" [style.overflow]="overflow ? 'auto' : 'hidden'">
+			<ng-content></ng-content>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.container {
+		position: fixed;
+		width: 700px;
+		height: 500px;
+		border-radius: 3px;
+		transition: scale 0.2s ease-in-out;
+		.topbar {
+			width: 100%;
+			height: 25px;
+			background-color: #ffffff98;
+			border-radius: 3px 3px 0 0;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			backdrop-filter: blur(10px);
+
+			.dot {
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				margin-left: 10px;
+				float: left;
+				box-shadow: 2px 2px 10px 0px #00000071;
+				&:hover {
+					scale: 1.2;
+				}
+			}
+		}
+		.contentbackground {
+			background-color: var(--bg-color);
+			width: 100%;
+			height: 100%;
+			border-radius: 0 0 3px 3px;
+			box-shadow: 10px 10px 10px 0px #00000098;
+		}
+		.content {
+			margin-left: 15px;
+			margin-right: 30px;
+			width: 95%;
+			height: 95%;
+			color: var(--text-color);
+			* {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	.red {
+		background-color: #ff5e56;
+		/*background-color: #540000;*/
+	}
+
+	.yellow {
+		background-color: #fbba2e;
+	}
+
+	.green {
+		background-color: #27c73f;
+	}
+</style>

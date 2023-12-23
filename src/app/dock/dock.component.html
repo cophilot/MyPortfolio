@@ -1,4 +1,7 @@
-<div class="container">
+<div
+	[class]="showAnimation ? 'hop container' : 'container'"
+	(mouseenter)="onMouseEnter()"
+>
 	<div class="background">
 		@for (project of projects; track $index) {
 			<img [src]="project.logoSmall" alt="project.name" class="appImg" />
@@ -12,6 +15,7 @@
 		padding-top: 60px;
 		padding-bottom: 0px;
 		transition: 0.5s ease-in-out;
+		z-index: 1000;
 		&:hover {
 			padding-top: 0px;
 			padding-bottom: 110px;
@@ -51,6 +55,28 @@
 		}
 		.appImg:last-child {
 			padding-right: 20px;
+		}
+	}
+	.active {
+		border-bottom: 2px solid #ff9900;
+	}
+
+	.hop {
+		animation: hopping 3s infinite;
+	}
+
+	@keyframes hopping {
+		0% {
+			transform: translateY(0px);
+		}
+		48% {
+			transform: translateY(-60px);
+		}
+		52% {
+			transform: translateY(-60px);
+		}
+		100% {
+			transform: translateY(0px);
 		}
 	}
 </style>

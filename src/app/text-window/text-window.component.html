@@ -1,0 +1,19 @@
+<app-window [id]="id" [level]="level">
+	<h1>{{ name }}</h1>
+	<textarea class="ta" [(ngModel)]="text"></textarea>
+</app-window>
+
+<style lang="scss">
+	.ta {
+		width: 99%;
+		height: 100%;
+		border: none;
+		background: transparent;
+		font-family: 'Roboto Mono', monospace;
+		resize: none;
+		color: var(--text-color);
+		&:focus {
+			outline: none;
+		}
+	}
+</style>

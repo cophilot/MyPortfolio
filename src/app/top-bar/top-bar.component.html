@@ -1,9 +1,27 @@
 <div class="background">
 	<div class="left">
-		<p>Portfolio</p>
+		<p>
+			<b> Philipp Bonin Portfolio </b>
+		</p>
 	</div>
 	<div class="right">
-		<p>14:05</p>
+		@if (isDarkMode()) {
+			<i
+				class="bi bi-brightness-high-fill"
+				style="cursor: pointer"
+				(click)="toggleDarkMode()"
+			></i>
+		} @else {
+			<i
+				class="bi bi-moon-stars-fill"
+				style="cursor: pointer"
+				(click)="toggleDarkMode()"
+			></i>
+		}
+		<i [class]="'bi bi-volume-' + sound + '-fill'"></i>
+		<i class="bi bi-bluetooth"></i>
+		<i [class]="'bi bi-wifi' + signal"></i>
+		<p>2:05 PM</p>
 	</div>
 </div>
 
@@ -19,16 +37,25 @@
 		box-shadow: 0 0 10px 0px #000;
 		backdrop-filter: blur(10px);
 		z-index: 1000;
-		font-weight: bold;
 		align-items: center;
 		font-size: 14px;
 		flex-direction: row;
 		justify-content: space-between;
+		cursor: default;
+		color: var(--text-color);
 		.left {
 			margin-left: 10px;
+			display: flex;
+			flex-direction: row;
 		}
 		.right {
-			margin-right: 10px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-size: 14px;
+			* {
+				margin-right: 10px;
+			}
 		}
 	}
 </style>

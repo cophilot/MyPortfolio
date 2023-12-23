@@ -12,9 +12,24 @@ import Project from '../../types/Project';
 export class DockComponent {
 	projects = Project.getEmptyArray();
 
+	entered = false;
+
+	showAnimation = false;
+
 	constructor() {
 		ProjectService.getProjects().then((projects: Project[]) => {
 			this.projects = projects;
 		});
+
+		setTimeout(() => {
+			if (!this.entered) {
+				this.showAnimation = true;
+			}
+		}, 10000);
+	}
+
+	onMouseEnter() {
+		this.entered = true;
+		this.showAnimation = false;
 	}
 }

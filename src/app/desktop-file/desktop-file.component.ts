@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CdkDrag } from '@angular/cdk/drag-drop';
+import File from '../../types/File';
+import { WindowManagerComponent } from '../window-manager/window-manager.component';
 
 @Component({
 	selector: 'app-desktop-file',
@@ -9,7 +11,7 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
 	styleUrl: './desktop-file.component.scss',
 })
 export class DesktopFileComponent {
-	@Input() name = '';
+	@Input() file: File = new File('default', 'default');
 
 	top = 0;
 	left = 0;
@@ -31,5 +33,7 @@ export class DesktopFileComponent {
 		setTimeout(() => {
 			this.openAnimation = false;
 		}, 700);
+
+		WindowManagerComponent.openTextWindow(this.file);
 	}
 }
