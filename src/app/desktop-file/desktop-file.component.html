@@ -1,5 +1,11 @@
-<div class="container" [style.top.px]="top" [style.left.px]="left" cdkDrag>
-	<img src="assets/file.png" alt="" />
+<div
+	class="container"
+	[style.top.px]="top"
+	[style.left.px]="left"
+	cdkDrag
+	(dblclick)="open()"
+>
+	<img src="assets/file.png" alt="" [class]="openAnimation ? 'opening' : ''" />
 	<p>
 		{{ name }}
 	</p>
@@ -16,11 +22,17 @@
 		}
 		p {
 			margin-top: 8px;
-			font-size: 14px;
+			font-size: 16px;
 			color: white;
 			text-align: center;
 			font-weight: bold;
 			text-shadow: 5px 5px 5px black;
 		}
+	}
+
+	.opening {
+		transition: all 0.6s ease-in-out;
+		opacity: 0;
+		scale: 2;
 	}
 </style>

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 	templateUrl: './window-manager.component.html',
 	styleUrl: './window-manager.component.scss',
 })
-export class WindowManagerComponent {}
+export class WindowManagerComponent {
+	// TODO
+	static openWindow(window: any) {}
+}

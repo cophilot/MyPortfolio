@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -9,31 +9,27 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
 	styleUrl: './desktop-file.component.scss',
 })
 export class DesktopFileComponent {
-	name = 'myFirstFile';
-	top = 100;
-	left = 10;
+	@Input() name = '';
+
+	top = 0;
+	left = 0;
+
+	static counter = 0;
+	readonly id: number;
+
+	openAnimation = false;
 
 	constructor() {
-		document.addEventListener('dragstart', this.onDragStart.bind(this));
-		document.addEventListener('drag', this.onDrag.bind(this));
-		document.addEventListener('drop', this.onDrop.bind(this));
+		DesktopFileComponent.counter++;
+		this.id = DesktopFileComponent.counter;
+		this.top = 50 + 150 * (this.id - 1);
+		this.left = 50;
 	}
 
-	onDragStart(event: any) {
-		console.log('drag start');
-	}
-
-	// let the user drag the file
-
-	onDrag(event: any) {
-		//this.top = event.screenY;
-		//this.left = event.screenX;
-	}
-
-	// let the user drop the file
-
-	onDrop(event: any) {
-		this.top = event.clientY;
-		this.left = event.clientX;
+	open() {
+		this.openAnimation = true;
+		setTimeout(() => {
+			this.openAnimation = false;
+		}, 700);
 	}
 }

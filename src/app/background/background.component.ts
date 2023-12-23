@@ -48,6 +48,5 @@ export class BackgroundComponent {
 				rotate: rotate,
 			});
 		}
-		console.log(this.bars);
 	}
 }
