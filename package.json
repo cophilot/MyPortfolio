@@ -4,7 +4,8 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve --open",
-		"build": "ng build",
+		"build": "ng build --base-href https://portfolio.philipp-bonin.com/",
+		"deploy": "ng deploy --base-href https://portfolio.philipp-bonin.com/ --cname portfolio.philipp-bonin.com",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
 		"format": "prettier --write ./src",
