@@ -5,7 +5,7 @@ import { DockComponent } from '../dock/dock.component';
 import { DesktopFileComponent } from '../desktop-file/desktop-file.component';
 import { BackgroundComponent } from '../background/background.component';
 import { TopBarComponent } from '../top-bar/top-bar.component';
-import getDesktopFiles from '../data/desktopFiles';
+import getDesktopFiles from '../../data/desktopFiles';
 import { WindowManagerComponent } from '../window-manager/window-manager.component';
 
 @Component({
@@ -28,24 +28,27 @@ export class DesktopAppComponent {
 
 	constructor(private router: Router) {
 		// check if open on mobile
-		if (window.innerWidth < 768) {
+		const isForcing = router.url.includes('force');
+
+		//if (window.innerWidth < 768 && this.detectMobile()) {
+		if (this.detectMobile() && !isForcing) {
 			router.navigate(['/mobile']);
 		}
 	}
-}
 
-function detectMobile() {
-	const toMatch = [
-		/Android/i,
-		/webOS/i,
-		/iPhone/i,
-		/iPad/i,
-		/iPod/i,
-		/BlackBerry/i,
-		/Windows Phone/i,
-	];
+	detectMobile(): boolean {
+		const toMatch = [
+			/Android/i,
+			/webOS/i,
+			/iPhone/i,
+			/iPad/i,
+			/iPod/i,
+			/BlackBerry/i,
+			/Windows Phone/i,
+		];
 
-	return toMatch.some((toMatchItem) => {
-		return navigator.userAgent.match(toMatchItem);
-	});
+		return toMatch.some((toMatchItem) => {
+			return navigator.userAgent.match(toMatchItem);
+		});
+	}
 }

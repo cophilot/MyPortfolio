@@ -4,11 +4,23 @@ import { MobileAppComponent } from './mobile-app/mobile-app.component';
 
 export const routes: Routes = [
 	{
-		path: '',
+		path: 'desktop',
+		component: DesktopAppComponent,
+	},
+	{
+		path: 'desktop/force',
 		component: DesktopAppComponent,
 	},
 	{
 		path: 'mobile',
 		component: MobileAppComponent,
+	},
+	{
+		path: 'mobile/force',
+		component: MobileAppComponent,
+	},
+	{
+		path: '',
+		component: DesktopAppComponent,
 	},
 ];

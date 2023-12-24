@@ -1,4 +1,4 @@
-import File from '../../types/File';
+import File from '../types/File';
 
 const getDesktopFiles = () => {
 	return [
