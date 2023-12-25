@@ -7,6 +7,7 @@ import { BackgroundComponent } from '../background/background.component';
 import { TopBarComponent } from '../top-bar/top-bar.component';
 import getDesktopFiles from '../../data/desktopFiles';
 import { WindowManagerComponent } from '../window-manager/window-manager.component';
+import { DesktopShortcutComponent } from '../desktop-shortcut/desktop-shortcut.component';
 
 @Component({
 	selector: 'app-desktop-app',
@@ -19,6 +20,7 @@ import { WindowManagerComponent } from '../window-manager/window-manager.compone
 		BackgroundComponent,
 		TopBarComponent,
 		WindowManagerComponent,
+		DesktopShortcutComponent,
 	],
 	templateUrl: './desktop-app.component.html',
 	styleUrl: './desktop-app.component.scss',
