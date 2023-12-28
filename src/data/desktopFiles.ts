@@ -8,6 +8,8 @@ const getDesktopFiles = () => {
 
 To get started move your mouse to the bottom of the screen. A dock will appear with some icons. This are my projects. Click on one to open it.
 
+If you are viewing this on a mobile device, please open the settings in the top right corner and enforce the mobile version.
+
 Have fun!
 `
 		),

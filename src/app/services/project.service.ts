@@ -19,7 +19,11 @@ export class ProjectService {
 		);
 		const jsonProjects = (await resp.json()) as any[];
 		jsonProjects.forEach((jsonProject) => {
+			if (jsonProject.name.toLowerCase() == 'myportfolio') {
+				return;
+			}
 			this.projects.push(Project.fromJson(jsonProject));
+			//}
 		});
 
 		this.isInit = true;

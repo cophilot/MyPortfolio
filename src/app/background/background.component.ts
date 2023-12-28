@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppearanceService } from '../services/appearance.service';
 import { darkColors, lightColors } from '../../data/colors';
 
@@ -12,6 +12,8 @@ import { darkColors, lightColors } from '../../data/colors';
 export class BackgroundComponent {
 	static bars: any[] = [];
 
+	@Input() mobile: boolean = false;
+
 	constructor() {
 		BackgroundComponent.init();
 	}
@@ -22,7 +24,7 @@ export class BackgroundComponent {
 		while (offsetTop < window.innerHeight + 500) {
 			offsetTop += Math.floor(Math.random() * 30 + 15);
 			const color = colors[Math.floor(Math.random() * colors.length)];
-			const height = Math.floor(Math.random() * 3) + 2;
+			const height = Math.floor(Math.random() * 3) + 5;
 
 			const rotate = Math.random() * 3 + 20;
 			this.bars.push({
@@ -30,6 +32,7 @@ export class BackgroundComponent {
 				offsetTop: offsetTop,
 				height: height,
 				rotate: rotate,
+				zIndex: Math.floor(Math.random() * 2) === 0 ? -3 : -1,
 			});
 		}
 	}

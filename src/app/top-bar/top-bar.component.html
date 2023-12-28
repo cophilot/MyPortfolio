@@ -1,5 +1,10 @@
 <div class="background">
 	<div class="left">
+		<img
+			[src]="'assets/logo_small_' + (isDarkMode() ? 'white' : 'black') + '.png'"
+			alt=""
+			class="logo"
+		/>
 		<p>
 			<b> Philipp Bonin Portfolio </b>
 		</p>
@@ -48,10 +53,15 @@
 		justify-content: space-between;
 		cursor: default;
 		color: var(--text-color);
+		.logo {
+			height: 30px;
+			margin-right: 5px;
+		}
 		.left {
-			margin-left: 10px;
+			margin-left: 5px;
 			display: flex;
 			flex-direction: row;
+			align-items: center;
 		}
 		.right {
 			display: flex;
