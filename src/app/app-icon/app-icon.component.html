@@ -1,12 +1,42 @@
-<h1>{{ project.name }}</h1>
-<div class="background">
-	<img [src]="project.logoSmall" alt="project.name" class="appImg" />
+<div class="app">
+	<div class="background" [style.background-color]="backgroundColor">
+		<img [src]="project.logoSmall" alt="project.name" class="appImg" />
+	</div>
+	<p>
+		{{ project.name }}
+	</p>
 </div>
 
 <style lang="scss">
+	.app {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 10px;
+		p {
+			margin: 5;
+			font-weight: bold;
+			max-width: 70px;
+			text-align: center;
+			font-size: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 	.background {
+		cursor: pointer;
 		background-color: red;
-		width: 100px;
-		height: 100px;
+		width: 70px;
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20%;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		img {
+			width: 85%;
+		}
 	}
 </style>

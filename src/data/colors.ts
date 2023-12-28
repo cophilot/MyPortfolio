@@ -44,4 +44,12 @@ const darkColors = [
 	'#1B2632',
 ];
 
-export { lightColors, darkColors };
+const getRandomLightColor = () => {
+	return lightColors[Math.floor(Math.random() * lightColors.length)];
+};
+
+const getRandomDarkColor = () => {
+	return darkColors[Math.floor(Math.random() * darkColors.length)];
+};
+
+export { lightColors, darkColors, getRandomDarkColor, getRandomLightColor };

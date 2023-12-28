@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import Project from '../../types/Project';
+import { AppearanceService } from '../services/appearance.service';
+import { getRandomDarkColor, getRandomLightColor } from '../../data/colors';
 
 @Component({
 	selector: 'app-app-icon',
@@ -10,4 +12,11 @@ import Project from '../../types/Project';
 })
 export class AppIconComponent {
 	@Input() project!: Project;
+	backgroundColor = '#000000';
+
+	ngOnInit() {
+		this.backgroundColor = AppearanceService.isDarkMode
+			? getRandomDarkColor()
+			: getRandomLightColor();
+	}
 }

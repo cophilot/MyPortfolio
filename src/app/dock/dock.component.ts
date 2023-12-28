@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import Project from '../../types/Project';
+import { WindowManagerComponent } from '../window-manager/window-manager.component';
 
 @Component({
 	selector: 'app-dock',
@@ -26,6 +27,13 @@ export class DockComponent {
 				this.showAnimation = true;
 			}
 		}, 10000);
+	}
+
+	openWindow(project: Project) {
+		WindowManagerComponent.openProjectWindow(project);
+	}
+	isProjectActive(project: Project): boolean {
+		return WindowManagerComponent.isProjectWindowOpen(project);
 	}
 
 	onMouseEnter() {

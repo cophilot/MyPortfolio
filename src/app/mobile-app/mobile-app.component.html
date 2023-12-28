@@ -5,8 +5,17 @@
 		This site is still under construction. Please visit the desktop version for
 		now.
 	</p>
+	<p (click)="goToDesktop()">Go to Desktop Version</p>
 
-	<!-- @for (project of projects; track $index) {
-		<app-app-icon [project]="project"></app-app-icon>
-	} -->
+	<!-- <div class="app-box">
+		@for (project of projects; track $index) {
+			<app-app-icon [project]="project"></app-app-icon>
+		}
+	</div> -->
 </div>
+<style lang="scss">
+	.app-box {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	}
+</style>

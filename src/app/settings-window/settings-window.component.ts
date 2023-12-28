@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { WindowComponent } from '../../window/window.component';
-import { AppearanceService } from '../appearance.service';
+import { WindowComponent } from '../window/window.component';
+import { AppearanceService } from '../services/appearance.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-settings-window',
@@ -13,6 +14,8 @@ export class SettingsWindowComponent {
 	@Input() id = -1;
 	@Input() level = 10;
 
+	constructor(private router: Router) {}
+
 	isDarkMode() {
 		return AppearanceService.isDarkMode;
 	}
@@ -23,5 +26,9 @@ export class SettingsWindowComponent {
 		} else {
 			AppearanceService.darkmode();
 		}
+	}
+
+	goToMobile() {
+		this.router.navigate(['/mobile/force']);
 	}
 }

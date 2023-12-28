@@ -4,7 +4,12 @@
 >
 	<div class="background">
 		@for (project of projects; track $index) {
-			<img [src]="project.logoSmall" alt="project.name" class="appImg" />
+			<img
+				[src]="project.logoSmall"
+				alt="project.name"
+				[class]="isProjectActive(project) ? 'appImg active' : 'appImg'"
+				(click)="openWindow(project)"
+			/>
 		}
 	</div>
 </div>

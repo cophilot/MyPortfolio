@@ -2,12 +2,19 @@ import { Component } from '@angular/core';
 import File from '../../types/File';
 import { WindowComponent } from '../window/window.component';
 import { TextWindowComponent } from '../text-window/text-window.component';
-import { SettingsWindowComponent } from '../services/settings-window/settings-window.component';
+import { SettingsWindowComponent } from '../settings-window/settings-window.component';
+import { ProjectWindowComponent } from '../project-window/project-window.component';
+import Project from '../../types/Project';
 
 @Component({
 	selector: 'app-window-manager',
 	standalone: true,
-	imports: [WindowComponent, TextWindowComponent, SettingsWindowComponent],
+	imports: [
+		WindowComponent,
+		TextWindowComponent,
+		SettingsWindowComponent,
+		ProjectWindowComponent,
+	],
 	templateUrl: './window-manager.component.html',
 	styleUrl: './window-manager.component.scss',
 })
@@ -33,6 +40,7 @@ export class WindowManagerComponent {
 		});
 		WindowManagerComponent.windowIDCounter++;
 	}
+
 	static openTextWindow(file: File) {
 		this.decreaseLevel();
 		WindowManagerComponent.windows.push({
@@ -42,6 +50,42 @@ export class WindowManagerComponent {
 			level: 0,
 		});
 		WindowManagerComponent.windowIDCounter++;
+	}
+
+	static openProjectWindow(project: Project) {
+		const projectWindows = this.windows.filter(
+			(window) => window.type == 'project'
+		);
+
+		for (const window of projectWindows) {
+			if (window.project.name == project.name) {
+				this.focusWindow(window.id);
+				return;
+			}
+		}
+
+		this.decreaseLevel();
+		WindowManagerComponent.windows.push({
+			id: WindowManagerComponent.windowIDCounter,
+			type: 'project',
+			project: project,
+			level: 0,
+		});
+		WindowManagerComponent.windowIDCounter++;
+	}
+
+	static isProjectWindowOpen(project: Project): boolean {
+		const projectWindows = this.windows.filter(
+			(window) => window.type == 'project'
+		);
+
+		for (const window of projectWindows) {
+			if (window.project.name == project.name) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	static closeWindow(id: number) {

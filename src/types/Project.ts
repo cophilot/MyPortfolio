@@ -1,6 +1,7 @@
 export default class Project {
 	readonly name: string;
 	readonly description: string;
+	readonly branch: string;
 	readonly url: string;
 	readonly topics: string[];
 	readonly stars: number;
@@ -18,7 +19,8 @@ export default class Project {
 		homepage: string,
 		logo: string,
 		logoSmall: string,
-		version: string
+		version: string,
+		branch: string
 	) {
 		this.name = name;
 		this.description = description;
@@ -29,6 +31,7 @@ export default class Project {
 		this.logo = logo;
 		this.logoSmall = logoSmall;
 		this.version = version;
+		this.branch = branch;
 	}
 
 	static fromJson(json: any): Project {
@@ -41,7 +44,8 @@ export default class Project {
 			json.homepage,
 			json.logo_url,
 			json.logo_small_url,
-			json.version
+			json.version,
+			json.branch
 		);
 	}
 

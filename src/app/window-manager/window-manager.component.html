@@ -14,5 +14,12 @@
 				[level]="window.level"
 			></app-settings-window>
 		}
+		@case ('project') {
+			<app-project-window
+				[id]="window.id"
+				[level]="window.level"
+				[project]="window.project"
+			></app-project-window>
+		}
 	}
 }

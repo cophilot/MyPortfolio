@@ -22,10 +22,10 @@ export class DesktopShortcutComponent {
 	openAnimation = false;
 
 	constructor() {
-		DesktopFileComponent.counter++;
 		this.id = DesktopFileComponent.counter;
-		this.top = 50 + 150 * (this.id - 1);
-		this.left = 50;
+		DesktopFileComponent.counter++;
+		this.top = DesktopFileComponent.getTopForId(this.id);
+		this.left = DesktopFileComponent.getLeftForId(this.id);
 	}
 
 	openLink() {

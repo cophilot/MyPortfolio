@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"start": "ng serve --open",
+		"start": "ng serve --open --host 0.0.0.0",
 		"build": "ng build --base-href https://portfolio.philipp-bonin.com/ --aot --configuration production",
 		"deploy": "ng deploy --base-href https://portfolio.philipp-bonin.com/ --cname portfolio.philipp-bonin.com",
 		"watch": "ng build --watch --configuration development",
@@ -24,6 +24,8 @@
 		"@angular/platform-browser-dynamic": "^17.0.0",
 		"@angular/router": "^17.0.0",
 		"bootstrap-icons": "^1.11.2",
+		"marked": "^9.1.6",
+		"ngx-markdown": "^17.1.1",
 		"rxjs": "~7.8.0",
 		"tslib": "^2.3.0",
 		"zone.js": "~0.14.2"

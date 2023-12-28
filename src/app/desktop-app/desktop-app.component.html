@@ -5,14 +5,15 @@
 <app-top-bar></app-top-bar>
 <app-window-manager></app-window-manager>
 
-<app-desktop-shortcut
-	name="GitHub"
-	url="https://github.com/phil1436"
-	img="assets/github.png"
-></app-desktop-shortcut>
-
 @for (file of desktopFiles; track $index) {
 	<app-desktop-file [file]="file"></app-desktop-file>
+}
+@for (sc of desktopShortcuts; track $index) {
+	<app-desktop-shortcut
+		[name]="sc.name"
+		[url]="sc.url"
+		[img]="sc.img"
+	></app-desktop-shortcut>
 }
 
 <style lang="scss">

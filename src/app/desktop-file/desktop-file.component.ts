@@ -22,10 +22,17 @@ export class DesktopFileComponent {
 	openAnimation = false;
 
 	constructor() {
-		DesktopFileComponent.counter++;
 		this.id = DesktopFileComponent.counter;
-		this.top = 50 + 150 * (this.id - 1);
-		this.left = 50;
+		DesktopFileComponent.counter++;
+		this.top = DesktopFileComponent.getTopForId(this.id);
+		this.left = DesktopFileComponent.getLeftForId(this.id);
+	}
+
+	static getTopForId(id: number): number {
+		return 50 + 150 * (id % 4);
+	}
+	static getLeftForId(id: number): number {
+		return 50 + 150 * Math.floor(id / 4);
 	}
 
 	open() {
