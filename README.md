@@ -9,14 +9,14 @@
 
 <!-- Badges -->
 <div align="center">
-   <a href="https://github.com/phil1436/my-portfolio/blob/master/LICENSE">
-       <img src="https://img.shields.io/github/license/phil1436/my-portfolio" alt="license" />
+   <a href="https://github.com/phil1436/MyPortfolio/blob/master/LICENSE">
+       <img src="https://img.shields.io/github/license/phil1436/MyPortfolio" alt="license" />
    </a>
-   <a href="https://github.com/phil1436/my-portfolio/stargazers">
-       <img src="https://img.shields.io/github/stars/phil1436/my-portfolio" alt="stars" />
+   <a href="https://github.com/phil1436/MyPortfolio/stargazers">
+       <img src="https://img.shields.io/github/stars/phil1436/MyPortfolio" alt="stars" />
    </a>
-   <a href="https://github.com/phil1436/my-portfolio/commits/master">
-       <img src="https://img.shields.io/github/last-commit/phil1436/my-portfolio" alt="last commit" />
+   <a href="https://github.com/phil1436/MyPortfolio/commits/master">
+       <img src="https://img.shields.io/github/last-commit/phil1436/MyPortfolio" alt="last commit" />
    </a>
 </div>
 
