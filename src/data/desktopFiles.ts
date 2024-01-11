@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		),
 		new File(
 			'Contact.txt',
-			'GitHub Name: cophilot\nE-Mail: phil.likes.coding@gmail.com'
+			'GitHub Name: cophilot\nE-Mail: info@philipp-bonin.com'
 		),
 	];
 };
