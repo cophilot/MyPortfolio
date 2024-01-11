@@ -23,7 +23,7 @@ export class ProjectWindowComponent {
 	}
 
 	ngOnInit(): void {
-		const readmeURL = `https://raw.githubusercontent.com/phil1436/${this.project.name}/${this.project.branch}/README.md`;
+		const readmeURL = `https://raw.githubusercontent.com/cophilot/${this.project.name}/${this.project.branch}/README.md`;
 
 		this.mdService.renderer.link = (
 			href: string,
@@ -31,7 +31,7 @@ export class ProjectWindowComponent {
 			text: string
 		) => {
 			if (href.startsWith('#')) {
-				href = `https://github.com/phil1436/${this.project.name + href}`;
+				href = `https://github.com/cophilot/${this.project.name + href}`;
 			}
 			return `<a href="${href}" target="_blank" title="${title}">${text}</a>`;
 		};
@@ -42,7 +42,7 @@ export class ProjectWindowComponent {
 			text: string
 		) => {
 			if (!href.startsWith('http')) {
-				href = `https://raw.githubusercontent.com/phil1436/${this.project.name}/${this.project.branch}/${href}`;
+				href = `https://raw.githubusercontent.com/cophilot/${this.project.name}/${this.project.branch}/${href}`;
 			}
 			// remove unsafe: from the url
 			href = href.replace('unsafe:', '');
@@ -63,7 +63,7 @@ export class ProjectWindowComponent {
 				let srcOg = line.split('src="')[1].split('"')[0];
 				let srcNew = srcOg;
 				if (!srcNew.startsWith('http')) {
-					srcNew = `https://raw.githubusercontent.com/phil1436/${this.project.name}/${this.project.branch}/${srcOg}`;
+					srcNew = `https://raw.githubusercontent.com/cophilot/${this.project.name}/${this.project.branch}/${srcOg}`;
 				}
 				line = line.replace(srcOg, srcNew);
 				result += line + '\n';

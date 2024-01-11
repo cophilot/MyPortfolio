@@ -15,7 +15,7 @@ export class ProjectService {
 		}
 
 		const resp = await fetch(
-			'https://raw.githubusercontent.com/phil1436/.project-provider/main/projects.json'
+			'https://raw.githubusercontent.com/cophilot/.project-provider/main/projects.json'
 		);
 		const jsonProjects = (await resp.json()) as any[];
 		jsonProjects.forEach((jsonProject) => {

@@ -2,7 +2,7 @@ const getDesktopShortcuts = (): any[] => {
 	return [
 		{
 			name: 'GitHub',
-			url: 'https://github.com/phil1436',
+			url: 'https://github.com/cophilot',
 			img: 'assets/github.png',
 		},
 		{

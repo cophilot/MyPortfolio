@@ -9,14 +9,14 @@
 
 <!-- Badges -->
 <div align="center">
-   <a href="https://github.com/phil1436/MyPortfolio/blob/master/LICENSE">
-       <img src="https://img.shields.io/github/license/phil1436/MyPortfolio" alt="license" />
+   <a href="https://github.com/cophilot/MyPortfolio/blob/master/LICENSE">
+       <img src="https://img.shields.io/github/license/cophilot/MyPortfolio" alt="license" />
    </a>
-   <a href="https://github.com/phil1436/MyPortfolio/stargazers">
-       <img src="https://img.shields.io/github/stars/phil1436/MyPortfolio" alt="stars" />
+   <a href="https://github.com/cophilot/MyPortfolio/stargazers">
+       <img src="https://img.shields.io/github/stars/cophilot/MyPortfolio" alt="stars" />
    </a>
-   <a href="https://github.com/phil1436/MyPortfolio/commits/master">
-       <img src="https://img.shields.io/github/last-commit/phil1436/MyPortfolio" alt="last commit" />
+   <a href="https://github.com/cophilot/MyPortfolio/commits/master">
+       <img src="https://img.shields.io/github/last-commit/cophilot/MyPortfolio" alt="last commit" />
    </a>
 </div>
 
@@ -26,6 +26,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ---
 
-by [Philipp B.](https://github.com/phil1436)
+by [Philipp B.](https://github.com/cophilot)
 
 _All similarities to other products are purely coincidental._
