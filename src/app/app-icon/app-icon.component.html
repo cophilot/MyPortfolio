@@ -3,7 +3,9 @@
 		<img [src]="project.logoSmall" alt="project.name" class="appImg" />
 	</div>
 	<p>
-		{{ project.name }}
+		<b>
+			{{ project.name }}
+		</b>
 	</p>
 </div>
 
@@ -23,6 +25,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			text-shadow: 0 0 10px rgba(0, 0, 0, 0.671);
 		}
 	}
 	.background {
@@ -36,7 +39,7 @@
 		border-radius: 20%;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 		img {
-			width: 85%;
+			width: 50px;
 		}
 	}
 </style>

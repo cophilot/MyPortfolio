@@ -8,7 +8,7 @@ const getDesktopFiles = () => {
 
 To get started move your mouse to the bottom of the screen. A dock will appear with some icons. This are my projects. Click on one to open it.
 
-If you are viewing this on a mobile device, please open the settings in the top right corner and enforce the mobile version.
+If you are viewing this on a mobile device, please click on the phone icon in the top bar to enforce the mobile view.
 
 Have fun!
 `
@@ -17,7 +17,7 @@ Have fun!
 			'LICENSE',
 			`MIT License
 
-Copyright (c) 2023 Philipp B.
+Copyright (c) 2024 Philipp B.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -36,10 +36,6 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTIO
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 `
-		),
-		new File(
-			'Contact.txt',
-			'GitHub Name: cophilot\nE-Mail: info@philipp-bonin.com'
 		),
 	];
 };
