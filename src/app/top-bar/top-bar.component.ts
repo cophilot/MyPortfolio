@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppearanceService } from '../services/appearance.service';
 import { WindowManagerComponent } from '../window-manager/window-manager.component';
 import { Router } from '@angular/router';
@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
 	styleUrl: './top-bar.component.scss',
 })
 export class TopBarComponent {
+	@Input() mobile = false;
+
 	signal = '';
 	sound = 'up';
+	cellular = 0;
 
 	constructor(private router: Router) {
 		// get random int between 0 and 2
@@ -27,6 +30,7 @@ export class TopBarComponent {
 		if (randomInt == 1) {
 			this.sound = 'mute';
 		}
+		this.cellular = Math.floor(Math.random() * 4) + 1;
 	}
 
 	isDarkMode() {

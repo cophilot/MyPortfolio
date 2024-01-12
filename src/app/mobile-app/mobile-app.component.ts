@@ -5,11 +5,12 @@ import { AppIconComponent } from '../app-icon/app-icon.component';
 import Project from '../../types/Project';
 import { ProjectService } from '../services/project.service';
 import detectMobile from '../../utils/detectMobile';
+import { TopBarComponent } from '../top-bar/top-bar.component';
 
 @Component({
 	selector: 'app-mobile-app',
 	standalone: true,
-	imports: [BackgroundComponent, AppIconComponent],
+	imports: [BackgroundComponent, AppIconComponent, TopBarComponent],
 	templateUrl: './mobile-app.component.html',
 	styleUrl: './mobile-app.component.scss',
 })
