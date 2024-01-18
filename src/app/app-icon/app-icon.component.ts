@@ -12,11 +12,22 @@ import { getRandomDarkColor, getRandomLightColor } from '../../data/colors';
 })
 export class AppIconComponent {
 	@Input() project!: Project;
+	isFiller = false;
 	backgroundColor = '#000000';
 
 	ngOnInit() {
+		if (!this.project.name) {
+			this.isFiller = true;
+			return;
+		}
 		this.backgroundColor = AppearanceService.isDarkMode
 			? getRandomDarkColor()
 			: getRandomLightColor();
+	}
+
+	onClick() {
+		if (this.isFiller) return;
+		// open url in new tab
+		window.open(this.project.url, '_blank');
 	}
 }

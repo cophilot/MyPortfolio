@@ -1,6 +1,6 @@
-<div class="app">
+<div class="app" [style]="isFiller ? 'opacity:0' : ''" (click)="onClick()">
 	<div class="background" [style.background-color]="backgroundColor">
-		<img [src]="project.logoSmall" alt="project.name" class="appImg" />
+		<img [src]="project.logoSmall" [alt]="project.name" class="appImg" />
 	</div>
 	<p>
 		<b>
@@ -21,11 +21,11 @@
 			font-weight: bold;
 			max-width: 70px;
 			text-align: center;
-			font-size: 12px;
+			font-size: 16px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			text-shadow: 0 0 10px rgba(0, 0, 0, 0.671);
+			text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 		}
 	}
 	.background {
@@ -37,7 +37,7 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 20%;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
 		img {
 			width: 50px;
 		}

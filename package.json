@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"start": "npm install && ng serve --open --host 0.0.0.0",
+		"start": "ng serve --open --host 0.0.0.0",
 		"build": "ng build --base-href https://portfolio.philipp-bonin.com/ --aot --configuration production",
 		"deploy": "ng deploy --base-href https://portfolio.philipp-bonin.com/ --cname portfolio.philipp-bonin.com",
 		"watch": "ng build --watch --configuration development",

@@ -1,0 +1,112 @@
+<div class="container">
+	<div class="background">
+		<div class="app" (click)="openLink('https://github.com/cophilot')">
+			<div
+				class="app-background"
+				style="background-color: #656565"
+				(click)="(openLink)"
+			>
+				<img src="assets/github.png" alt="" class="appImg" />
+			</div>
+			<p>
+				<b> GitHub </b>
+			</p>
+		</div>
+		<div class="app" (click)="openLink('')">
+			<div
+				class="app-background"
+				style="background-color: #656565"
+				(click)="(openLink)"
+			>
+				<img src="assets/github.png" alt="" class="appImg" />
+			</div>
+			<p>
+				<b> GitHub </b>
+			</p>
+		</div>
+		<div class="app" (click)="openLink('mailto:info@philipp-bonin.com')">
+			<div
+				class="app-background"
+				style="background-color: #13528c"
+				(click)="(openLink)"
+			>
+				<img src="assets/email.png" alt="" class="appImg" />
+			</div>
+			<p>
+				<b> E-Mail </b>
+			</p>
+		</div>
+		<div class="app" (click)="openLink('https://github.com/cophilot')">
+			<div
+				class="app-background"
+				style="background-color: #656565"
+				(click)="(openLink)"
+			>
+				<img src="assets/github.png" alt="" class="appImg" />
+			</div>
+			<p>
+				<b> GitHub </b>
+			</p>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.container {
+		position: fixed;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1000;
+		width: 100%;
+	}
+	.background {
+		background-color: #1d1d1d4f;
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.486);
+		border-radius: 30px;
+		box-shadow: 0 0 10px 0px #000;
+		display: inline-flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 90%;
+	}
+	.app {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		p {
+			margin: 5;
+			font-weight: bold;
+			max-width: 70px;
+			text-align: center;
+			font-size: 16px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+		}
+	}
+	.app-background {
+		cursor: pointer;
+		background-color: red;
+		width: 70px;
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20%;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+		img {
+			width: 50px;
+		}
+	}
+</style>

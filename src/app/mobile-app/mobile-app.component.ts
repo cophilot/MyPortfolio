@@ -6,16 +6,22 @@ import Project from '../../types/Project';
 import { ProjectService } from '../services/project.service';
 import detectMobile from '../../utils/detectMobile';
 import { TopBarComponent } from '../top-bar/top-bar.component';
+import { DockMobileComponent } from '../dock-mobile/dock-mobile.component';
 
 @Component({
 	selector: 'app-mobile-app',
 	standalone: true,
-	imports: [BackgroundComponent, AppIconComponent, TopBarComponent],
+	imports: [
+		BackgroundComponent,
+		AppIconComponent,
+		TopBarComponent,
+		DockMobileComponent,
+	],
 	templateUrl: './mobile-app.component.html',
 	styleUrl: './mobile-app.component.scss',
 })
 export class MobileAppComponent {
-	projects: Project[] = [];
+	projects: Project[][] = [];
 
 	constructor(private router: Router) {
 		const isForcing = router.url.includes('force');
@@ -25,7 +31,13 @@ export class MobileAppComponent {
 		}
 
 		ProjectService.getProjects().then((projects: Project[]) => {
-			this.projects = projects;
+			for (let i = 0; i < projects.length; i += 4) {
+				this.projects.push(projects.slice(i, i + 4));
+			}
+			const fillUps = 4 - this.projects[this.projects.length - 1].length;
+			for (let i = 0; i < fillUps; i++) {
+				this.projects[this.projects.length - 1].push({} as Project);
+			}
 		});
 	}
 

@@ -1,24 +1,43 @@
 <app-background [mobile]="true"></app-background>
 <app-top-bar [mobile]="true"></app-top-bar>
-<div style="margin-left: 20px; margin-top: 30px">
-	<h1>MyPortfolio Mobile</h1>
-	<p>
+<app-dock-mobile class="dock"></app-dock-mobile>
+<div style="margin-top: 30px">
+	<!-- <h1>MyPortfolio Mobile</h1> -->
+	<!-- <p>
 		<b>
 			This site is still under construction. Please visit the desktop version
 			for now.
 		</b>
 	</p>
-	<p (click)="goToDesktop()">Go to Desktop Version</p>
+	<p (click)="goToDesktop()">Go to Desktop Version</p> -->
 
-	<!-- 	<div class="app-box">
-		@for (project of projects; track $index) {
-			<app-app-icon [project]="project"></app-app-icon>
+	<div class="app-box">
+		@for (projectRow of projects; track $index) {
+			<div class="app-row">
+				@for (project of projectRow; track $index) {
+					<app-app-icon [project]="project"></app-app-icon>
+				}
+			</div>
 		}
-	</div> -->
+	</div>
 </div>
 <style lang="scss">
 	.app-box {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		.app-row {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+	.dock {
+		/*position: fixed;*/
+		/*bottom: 10px;*/
+		/*left: 50%;*/
+		/*transform: translateX(-50%);*/
+		/*z-index: 1000;*/
 	}
 </style>
