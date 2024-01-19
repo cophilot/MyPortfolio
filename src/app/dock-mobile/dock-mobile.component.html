@@ -1,23 +1,7 @@
 <div class="container">
 	<div class="background">
 		<div class="app" (click)="openLink('https://github.com/cophilot')">
-			<div
-				class="app-background"
-				style="background-color: #656565"
-				(click)="(openLink)"
-			>
-				<img src="assets/github.png" alt="" class="appImg" />
-			</div>
-			<p>
-				<b> GitHub </b>
-			</p>
-		</div>
-		<div class="app" (click)="openLink('')">
-			<div
-				class="app-background"
-				style="background-color: #656565"
-				(click)="(openLink)"
-			>
+			<div class="app-background" style="background-color: #656565">
 				<img src="assets/github.png" alt="" class="appImg" />
 			</div>
 			<p>
@@ -25,27 +9,31 @@
 			</p>
 		</div>
 		<div class="app" (click)="openLink('mailto:info@philipp-bonin.com')">
-			<div
-				class="app-background"
-				style="background-color: #13528c"
-				(click)="(openLink)"
-			>
+			<div class="app-background" style="background-color: #13528c">
 				<img src="assets/email.png" alt="" class="appImg" />
 			</div>
 			<p>
 				<b> E-Mail </b>
 			</p>
 		</div>
-		<div class="app" (click)="openLink('https://github.com/cophilot')">
-			<div
-				class="app-background"
-				style="background-color: #656565"
-				(click)="(openLink)"
-			>
-				<img src="assets/github.png" alt="" class="appImg" />
+		<div class="app" (click)="openLink('')">
+			<div class="app-background" style="background-color: #7e7e7e">
+				<img src="assets/settings.png" alt="" class="appImg" />
 			</div>
 			<p>
-				<b> GitHub </b>
+				<b> Settings </b>
+			</p>
+		</div>
+
+		<div
+			class="app"
+			(click)="openLink('https://github.com/cophilot/MyPortfolio#myportfolio')"
+		>
+			<div class="app-background" style="background-color: #540000">
+				<img src="assets/info.png" alt="" class="appImg" />
+			</div>
+			<p>
+				<b> Info </b>
 			</p>
 		</div>
 	</div>
@@ -54,7 +42,7 @@
 <style lang="scss">
 	.container {
 		position: fixed;
-		bottom: 10px;
+		bottom: 5px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
@@ -64,16 +52,18 @@
 		width: 100%;
 	}
 	.background {
-		background-color: #1d1d1d4f;
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
+		background-color: #72727279;
+		backdrop-filter: blur(25px);
+		-webkit-backdrop-filter: blur(25px);
 		border: 1px solid rgba(255, 255, 255, 0.486);
 		border-radius: 30px;
 		box-shadow: 0 0 10px 0px #000;
 		display: inline-flex;
 		justify-content: space-around;
 		align-items: center;
-		width: 90%;
+		width: 96%;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.app {
 		display: flex;
@@ -83,12 +73,12 @@
 		margin-top: 10px;
 		margin-left: 10px;
 		margin-right: 10px;
+		margin-bottom: -10px;
 		p {
-			margin: 5;
 			font-weight: bold;
 			max-width: 70px;
 			text-align: center;
-			font-size: 16px;
+			font-size: 14px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
