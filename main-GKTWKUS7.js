@@ -487,16 +487,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		width: 100%;
 	}
 	.background[_ngcontent-%COMP%] {
-		background-color: #72727279;
+		background-color: #49494979;
 		backdrop-filter: blur(25px);
 		-webkit-backdrop-filter: blur(25px);
-		border: 1px solid rgba(255, 255, 255, 0.486);
 		border-radius: 30px;
 		box-shadow: 0 0 10px 0px #000;
 		display: inline-flex;
 		justify-content: space-around;
 		align-items: center;
-		width: 96%;
+		width: 94%;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
